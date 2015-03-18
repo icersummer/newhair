@@ -4,6 +4,7 @@ import android.app.ActivityGroup;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
@@ -16,7 +17,7 @@ import com.vj.newhair.R;
 
 public class MainActivity extends ActivityGroup {
 	private static final String tag = MainActivity.class.getName();
-	boolean useInjection = false;
+	boolean useInjection = true;
 	/**
 	 * TabHost 包括2部分：TagWidget和FrameLayout。
 	 */
@@ -24,6 +25,7 @@ public class MainActivity extends ActivityGroup {
 	RadioGroup mRadioGroup;
 	LinearLayout mLayoutComment;
 	EditText mEditInput;
+	private InputMethodManager mInputManager;
 
 	@SuppressWarnings("deprecation")
 	@Override
@@ -42,6 +44,7 @@ public class MainActivity extends ActivityGroup {
 		final TabWidget tagWidget=mTabHost.getTabWidget();
 		tagWidget.setStripEnabled(false);// 圆角边线不启用
 		addTabIntent();
+		mTabHost.setCurrentTab(0);
 	}
 
 	
@@ -55,6 +58,9 @@ public class MainActivity extends ActivityGroup {
 	private void addTabIntent() {
 		// TODO Auto-generated method stub
 		this.mTabHost.addTab(buildTabSpec("tab1", "0", new Intent(this, ZoneActivity.class)));
+		this.mTabHost.addTab(buildTabSpec("tab2","1",new Intent(this, FindHairActivity.class)));
+		this.mTabHost.addTab(buildTabSpec("tab3","2",new Intent(this,DisCoverActivity.class)));
+		this.mTabHost.addTab(buildTabSpec("tab4","3",new Intent(this,MeActivity.class)));
 	}
 
 

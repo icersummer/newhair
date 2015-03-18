@@ -39,6 +39,27 @@
                 android:visibility="gone"
                 ></TabWidget>
             
+            <RadioGroup 
+                android:id="@+id/radiogroup"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/tab_height"
+                android:layout_gravity="bottom"
+                android:background="@drawable/hair_bar_bg"
+                android:orientation="horizontal"
+                android:paddingTop="4dp" >
+                <RadioButton 
+                    android:id="@+id/radio_choumeibang"
+                    
+                    />
+                <RadioButton
+                    android:id="@+id/radio_hairscan"
+                    />
+                <RadioButton
+                    android:id="@+id/radio_me"
+                    />
+                
+            </RadioGroup>
+            
             
             
         </LinearLayout>
