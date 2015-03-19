@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="app_name">美美美</string>
     <string name="zone_base_section_tab_alltopics">全部话题</string>
-    <string name="app_name">newhair</string>
+    <string name="main_choumeibang">最美帮</string>
+    <string name="main_hairscan">寻找美</string>
+    <string name="main_discover">发现</string>
+    <string name="main_me">我</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="send">发送</string>
+    <string name="hairscan">看发型</string>
     <string name="zone_tab_hot_tag">热门标签</string>
 
 </resources>
