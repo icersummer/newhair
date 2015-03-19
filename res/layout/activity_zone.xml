@@ -77,6 +77,24 @@
             </RadioGroup>
         </RelativeLayout>
         
+        <!-- 进度条 - 使用ANDROID原生自带的默认样式 -->
+        <LinearLayout 
+            android:id="@+id/layout_loading"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+			<ProgressBar 
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"/>            
+        </LinearLayout>
+        
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_zone_view"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            />
     </LinearLayout>
     
 </RelativeLayout>
