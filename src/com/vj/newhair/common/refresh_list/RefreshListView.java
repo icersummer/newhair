@@ -8,6 +8,18 @@ import android.widget.ListView;
 
 public class RefreshListView extends ListView implements OnScrollListener{
 
+	private boolean mEnablePullLoad;
+	
+	/**
+	 * -- footer view
+	 */
+	public XListViewFooter mFooterView;
+
+	/**
+	 * TODO what for ?
+	 */
+	private boolean mPullLoading;
+
 	public RefreshListView(Context context) {
 		super(context);
 		// TODO Auto-generated constructor stub
@@ -18,6 +30,12 @@ public class RefreshListView extends ListView implements OnScrollListener{
 	}
 	public RefreshListView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
+	}
+	
+	private void initWithContext(Context context){
+		
+		// init footer view
+		mFooterView = new XListViewFooter(context);
 	}
 
 	@Override
@@ -39,6 +57,21 @@ public class RefreshListView extends ListView implements OnScrollListener{
 	public interface IHListViewListener {
 		public void onRefresh();
 		public void onLoadMore();
+	}
+
+	/**
+	 * enable or disable pull up load more feature
+	 * @param b
+	 */
+	public void setPullLoadEnable(boolean enable) {
+		// TODO Auto-generated method stub
+		mEnablePullLoad=enable;
+		if(mEnablePullLoad){
+			mFooterView.hide();
+			mFooterView.setOnClickListener(null);
+		}else{
+			mPullLoading=false;
+		}
 	}
 
 }

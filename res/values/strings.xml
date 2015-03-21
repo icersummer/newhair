@@ -12,5 +12,9 @@
     <string name="send">发送</string>
     <string name="hairscan">看发型</string>
     <string name="zone_tab_hot_tag">热门标签</string>
+    <string name="zone_notice">公告区</string>
+    <string name="zone_good">精华区</string>
+    <string name="zone_hot">人气榜</string>
+    <string name="zone_score">积分榜</string>
 
 </resources>

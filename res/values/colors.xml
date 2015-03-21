@@ -6,5 +6,8 @@
     <color name="main_bottom_line">#ffe1e1e1</color>
     <color name="zone_title_bg">#ffee71a1</color>
     <color name="zone_bg">#fff2f2f2</color>
+    <color name="zone_list_username">#ff576c94</color>
+    <color name="zone_list_time">#ffcbcbcb</color>
+    <color name="zone_list_header">#ff3b3b3b</color>
     
 </resources>
