@@ -12,21 +12,21 @@ public class ZoneActivity$$ViewInjector {
       throw new IllegalStateException("Required view with id '2131296263' for field 'mViewPager' was not found. If this view is optional add '@Optional' annotation.");
     }
     target.mViewPager = (android.support.v4.view.ViewPager) view;
-    view = finder.findById(source, 2131296259);
-    if (view == null) {
-      throw new IllegalStateException("Required view with id '2131296259' for field 'mRadioGroup' was not found. If this view is optional add '@Optional' annotation.");
-    }
-    target.mRadioGroup = (android.widget.RadioGroup) view;
     view = finder.findById(source, 2131296262);
     if (view == null) {
       throw new IllegalStateException("Required view with id '2131296262' for field 'mLayoutLoading' was not found. If this view is optional add '@Optional' annotation.");
     }
     target.mLayoutLoading = (android.widget.LinearLayout) view;
+    view = finder.findById(source, 2131296259);
+    if (view == null) {
+      throw new IllegalStateException("Required view with id '2131296259' for field 'mRadioGroup' was not found. If this view is optional add '@Optional' annotation.");
+    }
+    target.mRadioGroup = (android.widget.RadioGroup) view;
   }
 
   public static void reset(com.vj.newhair.activity.ZoneActivity target) {
     target.mViewPager = null;
-    target.mRadioGroup = null;
     target.mLayoutLoading = null;
+    target.mRadioGroup = null;
   }
 }

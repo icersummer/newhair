@@ -1,9 +1,14 @@
 package com.vj.newhair.activity;
 
 import android.app.ActivityGroup;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
+import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -13,6 +18,7 @@ import android.widget.TabHost;
 import android.widget.TabWidget;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import butterknife.OnClick;
 
 import com.vj.newhair.R;
 
@@ -25,8 +31,20 @@ public class MainActivity extends ActivityGroup {
 	 */
 	@InjectView(R.id.tabhost) TabHost mTabHost;
 	@InjectView(R.id.radiogroup) RadioGroup mRadioGroup;
-	LinearLayout mLayoutComment;
-	EditText mEditInput;
+	@InjectView(R.id.layout_comment) LinearLayout mLayoutComment;
+	@InjectView(R.id.post_comment_input) EditText mEditInput;
+	
+	@OnClick(R.id.post_input_camera)
+	public void onPostCameraClicked(View v){
+		
+	}
+	@OnClick(R.id.post_input_send)
+	public void onPostSendClicked(View v){
+		
+	}
+	
+	public static final String CLICK_RECEIVED_ACTION = "click_action";
+	private ActionClickReceiver mActionClickReceiver;
 	private InputMethodManager mInputManager;
 
 	///////////////////////////////////////////////////////////////////////////////////////////
@@ -40,14 +58,14 @@ public class MainActivity extends ActivityGroup {
 		} else {
 			mTabHost = (TabHost) this.findViewById(R.id.tabhost);
 		}
-		
-		
 		Log.e(tag, "mTabHost = " + mTabHost);
 		mTabHost.setup(getLocalActivityManager());
-		final TabWidget tagWidget=mTabHost.getTabWidget();
-		tagWidget.setStripEnabled(false);// 圆角边线不启用
+		final TabWidget tabWidget=mTabHost.getTabWidget();
+		tabWidget.setStripEnabled(false);// 圆角边线不启用
 		addTabIntent();
 		mTabHost.setCurrentTab(0);
+		
+		mInputManager=(InputMethodManager) this.getSystemService(Context.INPUT_METHOD_SERVICE);
 		
 		// 底部单选组：RADIO GROUP
 		mRadioGroup.setOnCheckedChangeListener(new OnCheckedChangeListener(){
@@ -72,11 +90,58 @@ public class MainActivity extends ActivityGroup {
 				}
 			}
 		});
+		
+		registerMessageReceiver();
+	}
+	
+	public void registerMessageReceiver(){
+		mActionClickReceiver = new ActionClickReceiver();
+		//TODO IntentFilter used for ?
+		IntentFilter filter = new IntentFilter();
+		filter.setPriority(IntentFilter.SYSTEM_HIGH_PRIORITY);
+		filter.addAction(CLICK_RECEIVED_ACTION);
+		registerReceiver(mActionClickReceiver, filter);
+	}
+	
+	/**
+	 * TODO 新的类：BroadcastReceiver
+	 *
+	 */
+	public class ActionClickReceiver extends BroadcastReceiver {
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			// TODO Auto-generated method stub
+			if(CLICK_RECEIVED_ACTION.equals(intent.getAction())){
+				int uid = intent.getIntExtra("uid", 0);//TODO 这个方法不错，getIntExtra()
+				mLayoutComment.setVisibility(View.VISIBLE);
+				mInputManager.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
+				mEditInput.requestFocus();
+			}
+		}
+	}
+	
+	///////////////////////////////////////////////////////////////////////////////////////////
+	@Override
+	public boolean dispatchKeyEvent(KeyEvent event) {
+		if(event.getKeyCode() == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN){
+			if(mLayoutComment.isShown()){
+				mLayoutComment.setVisibility(View.GONE);
+				return true;
+			}
+		}
+		return super.dispatchKeyEvent(event);
+	}
+	
+	///////////////////////////////////////////////////////////////////////////////////////////
+	@Override
+	protected void onDestroy(){
+		super.onDestroy();
+		if(mActionClickReceiver != null)
+			unregisterReceiver(mActionClickReceiver);
 	}
 
 	///////////////////////////////////////////////////////////////////////////////////////////
 	private TabHost.TabSpec buildTabSpec(String tag, String label, final Intent intent) {
-		// TODO Auto-generated method stub
 		return this.mTabHost
 				.newTabSpec(tag)
 				.setIndicator(label)
@@ -91,7 +156,6 @@ public class MainActivity extends ActivityGroup {
 	 * MeActivity:                                              <br/>
 	 */
 	private void addTabIntent() {
-		// TODO Auto-generated method stub
 		this.mTabHost.addTab(buildTabSpec("tab1", "0", new Intent(this, ZoneActivity.class)));
 		this.mTabHost.addTab(buildTabSpec("tab2","1",new Intent(this, FindHairActivity.class)));
 		this.mTabHost.addTab(buildTabSpec("tab3","2",new Intent(this,DisCoverActivity.class)));

@@ -1,7 +1,9 @@
 package com.vj.newhair.activity;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.View;
@@ -31,6 +33,15 @@ public class ZoneActivity extends FragmentActivity{
 	 */
 	@InjectView(R.id.layout_loading) LinearLayout mLayoutLoading;
 	
+//	@OnClick(R.id.iv_zone_search)
+//	public void onSearchClicked(View v){
+//		startActivity(new Intent(ZoneActivity.this, TopicSearchActivity.class));
+//	}
+//	@OnClick(R.id.iv_zone_publish)
+//	public void onPublishClicked(View v){
+//		startActivity(new Intent(ZoneActivity.this, PublishActivity.class));
+//	}
+	
 	/**
 	 * 适配器，用来处理左右滑动页面
 	 */
@@ -51,16 +62,7 @@ public class ZoneActivity extends FragmentActivity{
 		mViewPager.setAdapter(mFragmentAdapter);
 		// 左右滑动时，触发单选按钮的点击
 		mViewPager.setOnPageChangeListener(new OnPageChangeListener(){
-			@Override
-			public void onPageScrollStateChanged(int arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-			@Override
-			public void onPageScrolled(int arg0, float arg1, int arg2) {
-				// TODO Auto-generated method stub
-				
-			}
+
 			@Override
 			public void onPageSelected(int position) {
 				// TODO Auto-generated method stub
@@ -74,6 +76,18 @@ public class ZoneActivity extends FragmentActivity{
 				default:
 					break;
 				}
+			}
+			
+			@Override
+			public void onPageScrolled(int arg0, float arg1, int arg2) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void onPageScrollStateChanged(int arg0) {
+				// TODO Auto-generated method stub
+				
 			}
 		});
 		
@@ -94,6 +108,16 @@ public class ZoneActivity extends FragmentActivity{
 			}
 		});
 		
+	}
+	
+	/**
+	 * TODO 这个方法什么作用
+	 * @param viewId
+	 * @param fragment
+	 */
+	protected void replaceFragment(int viewId, Fragment fragment){
+		FragmentManager fragmentManager = getSupportFragmentManager();
+		fragmentManager.beginTransaction().replace(viewId, fragment).commitAllowingStateLoss();
 	}
 	
 

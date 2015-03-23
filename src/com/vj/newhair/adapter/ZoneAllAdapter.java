@@ -1,9 +1,10 @@
 package com.vj.newhair.adapter;
 
 import java.util.LinkedList;
+import java.util.List;
 
 import android.content.Context;
-import android.support.v4.app.FragmentActivity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -55,20 +56,35 @@ public class ZoneAllAdapter extends BaseAdapter {
 		// TODO Auto-generated method stub
 		return position;
 	}
+	
+	public void addItemLast(List<ZoneAllItem> datas){
+		mListInfo.addAll(datas);
+	}
+	
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		// TODO Auto-generated method stub
 		final ViewHolder holder;
 		if(convertView==null){
-			
+			convertView=LayoutInflater.from(mContext).inflate(R.layout.item_topic, null);
+			holder=new ViewHolder(convertView);
+			convertView.setTag(holder);
 		}else{
-			
+			holder=(ViewHolder) convertView.getTag();
 		}
-		return null;
+		
+		final ZoneAllItem info = mListInfo.get(position);
+		if(position==0){
+			holder.m
+		}
 	}
 	
 	public class ViewHolder{
+		
+		CircleImageView mIvHead;
+		TextView mTvName;
+		
 		
 	}
 
