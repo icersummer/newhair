@@ -9,5 +9,9 @@
     <color name="zone_list_username">#ff576c94</color>
     <color name="zone_list_time">#ffcbcbcb</color>
     <color name="zone_list_header">#ff3b3b3b</color>
+    <color name="zone_list_content">#ff5b5b5b</color>
+    <color name="zone_list_button">#ff666666</color>
+    <color name="zone_item_button_line">#ffe6e7e4</color>
+    <color name="tab_bg">#fffb4a91</color>
     
 </resources>
