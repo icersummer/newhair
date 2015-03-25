@@ -18,6 +18,7 @@
     <string name="zone_score">积分榜</string>
     <string name="zone_list_top">置顶</string>
     <string name="zone_list_share">分享</string>
+    <string name="zone_list_collection">收藏</string>
     <string name="xlistview_header_hint_normal">下拉刷新</string>
     <string name="xlistview_header_hint_ready">松开刷新数据</string>
     <string name="xlistview_header_hint_loading">正在加载...</string>

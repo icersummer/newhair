@@ -48,7 +48,6 @@ public class RefreshListView extends ListView implements OnScrollListener{
 	 */
 	private IHListViewListener mListViewListener;
 	
-	private boolean mEnablePullLoad;
 	
 	/**
 	 * -- header view
@@ -82,7 +81,7 @@ public class RefreshListView extends ListView implements OnScrollListener{
 	 * -- footer view
 	 */
 	public XListViewFooter mFooterView;
-
+	private boolean mEnablePullLoad;
 	/**
 	 * TODO what for ?
 	 */
@@ -120,13 +119,16 @@ public class RefreshListView extends ListView implements OnScrollListener{
 	public RefreshListView(Context context) {
 		super(context);
 		// TODO Auto-generated constructor stub
+		initWithContext(context);
 	}
 
 	public RefreshListView(Context context, AttributeSet attrs) {
 		super(context,attrs);
+		initWithContext(context);
 	}
 	public RefreshListView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
+		initWithContext(context);
 	}
 	
 	private void initWithContext(Context context){

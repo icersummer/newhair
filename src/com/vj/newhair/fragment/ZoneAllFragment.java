@@ -3,6 +3,8 @@ package com.vj.newhair.fragment;
 import java.util.LinkedList;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -50,6 +52,27 @@ public class ZoneAllFragment extends Fragment implements OnClickListener, IHList
 	
 	private LinkedList<ZoneAllItem> mListInfos=new LinkedList<ZoneAllItem>();
 	
+	
+	//TODO 为什么这么定义
+	private Handler mHandler = new Handler(){
+		@Override
+		public void handleMessage(Message msg) {
+			// TODO Auto-generated method stub
+			switch(msg.what){
+			case R.id.ui_show_dialog:
+				
+				break;
+			case R.id.ui_dismiss_dialog:
+				
+				break;
+			case R.id.ui_show_text://网络超时和数据解析异常
+				
+				break;
+			case R.id.ui_update_ui:
+				break;
+			}
+		}
+	};
 	
 	public static ZoneAllFragment newInstance(){
 		ZoneAllFragment fragment = new ZoneAllFragment();

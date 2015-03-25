@@ -20,7 +20,7 @@ public class ZoneAllItem implements Serializable {
 	private boolean isCollect;
 	private boolean isLike;
 	private String[] picArray;
-	private List<?> listComment;
+	private List<Comment> listComment;
 	public int getId() {
 		return id;
 	}
@@ -99,10 +99,10 @@ public class ZoneAllItem implements Serializable {
 	public void setPicArray(String[] picArray) {
 		this.picArray = picArray;
 	}
-	public List<?> getListComment() {
+	public List<Comment> getListComment() {
 		return listComment;
 	}
-	public void setListComment(List<?> listComment) {
+	public void setListComment(List<Comment> listComment) {
 		this.listComment = listComment;
 	}
 
