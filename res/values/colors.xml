@@ -4,6 +4,15 @@
     <color name="white">#ffffffff</color>
     <color name="black">#ff000000</color>
     <color name="transparent">#00000000</color>
+    <color name="hair_scan_tag_color1">#ffbdab80</color>
+    <color name="hair_scan_tag_color2">#fff78eb2</color>
+    <color name="hair_scan_tag_color3">#ff6ec9bf</color>
+    <color name="hair_scan_tag_color4">#ff81c859</color>
+    <color name="hair_scan_tag_color5">#fffbc864</color>
+    <color name="hair_scan_tag_color6">#ffc864c7</color>
+    <color name="hair_scan_tag_color7">#ff79ade1</color>
+    <color name="hair_scan_tag_color8">#fffee973</color>
+    <color name="hair_scan_tag_color9">#ffee5f64</color>
     <color name="main_bottom_line">#ffe1e1e1</color>
     <color name="zone_title_bg">#ffee71a1</color>
     <color name="zone_bg">#fff2f2f2</color>
