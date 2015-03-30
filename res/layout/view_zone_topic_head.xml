@@ -18,7 +18,7 @@
         <LinearLayout 
             android:id="@+id/layout_notice"
             android:layout_width="0.0dip"
-            android:layout_height="50.0dip"
+            android:layout_height="50.5dip"
             android:layout_weight="1.0"
             android:background="@drawable/topic_tag_bg"
             android:gravity="center"

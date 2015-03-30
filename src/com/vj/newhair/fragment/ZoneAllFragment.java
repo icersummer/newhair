@@ -125,6 +125,8 @@ public class ZoneAllFragment extends Fragment implements OnClickListener, IHList
 		mLayoutGood.setOnClickListener(this);
 		mLayoutHot.setOnClickListener(this);
 		mLayoutScore.setOnClickListener(this);		
+		
+		mListView.addHeaderView(headView);// TODO ListView.addHeaderView(View v) ??		
 	}
 
 
