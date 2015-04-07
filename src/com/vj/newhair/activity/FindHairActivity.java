@@ -10,6 +10,7 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 import com.vj.newhair.R;
+import com.vj.newhair.adapter.FindHairFragmentAdapter;
 
 public class FindHairActivity extends FragmentActivity{
 	

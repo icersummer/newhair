@@ -5,6 +5,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.vj.newhair.fragment.FindHairFragment;
+
 public class FindHairFragmentAdapter extends FragmentPagerAdapter{
 	
 	private int pageCount= 3;
@@ -27,7 +29,7 @@ public class FindHairFragmentAdapter extends FragmentPagerAdapter{
 		case 1:
 			return FindHairFragment.newInstance(position);
 		case 2:
-			return MainTopicFragment.newInstance();
+//			return MainTopicFragment.newInstance();
 		}
 		return null;
 	}

@@ -131,7 +131,7 @@ public class XListViewHeader extends LinearLayout {
 	 * 重设xlistview_header layout的高度
 	 * @param height
 	 */
-	public void setVisibleHeight(int height){
+	public void setVisiableHeight(int height){
 		if(height < 0){
 			height = 0;			
 		}

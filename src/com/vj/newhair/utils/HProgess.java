@@ -1,5 +1,7 @@
 package com.vj.newhair.utils;
 
+import com.vj.newhair.widget.CustomProgressDialog;
+
 import android.content.Context;
 
 public class HProgess {
@@ -8,8 +10,7 @@ public class HProgess {
 	
 	public static void show(Context context, String message){
 		try {
-			if(context==null
-					) return;
+			if(context==null ) return;
 			if(dialog!=null)
 				dialog.dismiss();
 			dialog = new CustomProgressDialog(context, null);

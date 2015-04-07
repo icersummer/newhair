@@ -4,6 +4,7 @@ import com.vj.newhair.R;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.view.Gravity;
 
 public class CustomProgressDialog  extends Dialog {
 

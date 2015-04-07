@@ -15,6 +15,19 @@
         <item name="android:windowBackground">@color/white</item>
         <item name="android:windowIsTranslucent">true</item>
     </style>
+
+    <style name="CustomDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">adjustPan</item>
+    </style>
+    
+    <style name="CustomProgressDialog" parent="@style/CustomDialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
     
     <style name="main_tab_bottom">
         <item name="android:textSize">11sp</item>
@@ -27,5 +40,5 @@
         <item name="android:singleLine">true</item>
         <item name="android:layout_weight">1.0</item>
     </style>
-
+    
 </resources>

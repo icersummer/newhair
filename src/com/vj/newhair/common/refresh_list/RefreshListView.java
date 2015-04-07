@@ -285,7 +285,7 @@ public class RefreshListView extends ListView implements OnScrollListener{
 
 	private void updateHeaderHeight(float delta) {
 		// TODO Auto-generated method stub
-		mHeaderView.setVisibleHeight((int)delta + mHeaderView.getVisiableHeight());
+		mHeaderView.setVisiableHeight((int)delta + mHeaderView.getVisiableHeight());
 		// 未处于刷新状态，更新箭头
 		if(mEnablePullRefresh && !mPullRefreshing){
 			if(mHeaderView.getVisiableHeight() > mHeaderViewHeight){
