@@ -7,9 +7,9 @@ import butterknife.ButterKnife.Finder;
 public class ZoneHotFragment$$ViewInjector {
   public static void inject(Finder finder, final com.vj.newhair.fragment.ZoneHotFragment target, Object source) {
     View view;
-    view = finder.findById(source, 2131099767);
+    view = finder.findById(source, 2131099771);
     if (view == null) {
-      throw new IllegalStateException("Required view with id '2131099767' for field 'mGridView' was not found. If this view is optional add '@Optional' annotation.");
+      throw new IllegalStateException("Required view with id '2131099771' for field 'mGridView' was not found. If this view is optional add '@Optional' annotation.");
     }
     target.mGridView = (android.widget.GridView) view;
   }

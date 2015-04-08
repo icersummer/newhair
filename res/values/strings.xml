@@ -25,6 +25,9 @@
     <string name="xlistview_header_last_time">上次更新时间：</string>
     <string name="xlistview_footer_hint_normal">查看更多</string>
     <string name="xlistview_footer_hint_ready">松开载入更多</string>
+    <string name="find_recomm_tag_text">推荐</string>
+    <string name="find_new_tag_text">最新</string>
+    <string name="find_main_topic_tag_text">专题</string>
     <string name="exception_parse">解析数据异常</string>
     <string name="exception_timeout">网络连接超时</string>
 

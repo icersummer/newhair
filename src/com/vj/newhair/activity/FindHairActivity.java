@@ -33,7 +33,7 @@ public class FindHairActivity extends FragmentActivity{
 			public void onCheckedChanged(RadioGroup group, int checkedId) {
 				// TODO Auto-generated method stub
 				switch(checkedId){
-				case R.id.btn_tecomm_tag:
+				case R.id.btn_recomm_tag:
 					mViewPager.setCurrentItem(0);// RECOMMENDATION
 					break;
 				case R.id.btn_new_tag:
